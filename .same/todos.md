@@ -1,23 +1,34 @@
-# Axioma Capital Clone TODO
+# Axioma Capital Clone - TODOs
 
-## Core Components
-- [x] Header/Navigation component
-- [x] Hero section with loading animation
-- [x] Main content section with company intro
-- [x] Service cards section
-- [x] Contact form section
-- [x] Footer component
+## ✅ Setup
+- [x] Create Next.js project with shadcn
+- [x] Install dependencies
+- [x] Start dev server
 
-## Design Elements
-- [x] Dark theme setup
-- [x] Typography configuration
-- [ ] Fix glass-morphism card effects
-- [ ] Position 3D abstract graphics correctly
-- [ ] Add responsive design improvements
+## ✅ Components to implement
+- [x] Header with navigation
+- [x] Hero section with background
+- [x] About company section
+- [x] Services cards (3 cards)
+- [x] Interaction scheme section
+- [x] Contact form
+- [x] Footer
 
-## Features
-- [ ] Add smooth scrolling
-- [ ] Improve contact form styling
-- [ ] Add hover animations
-- [ ] Fix navigation menu visibility
-- [ ] Improve loading animation visibility
+## ✅ Design elements
+- [x] Custom colors and theme
+- [x] Typography improvements
+- [x] Logo component
+- [x] Abstract graphics
+- [x] Responsive layout
+
+## ✅ Improvements
+- [x] Add smooth scroll behavior
+- [x] Improve mobile menu
+- [x] Deploy project
+
+## 🔲 Future enhancements
+- [ ] Add form validation and submission
+- [ ] Add page transitions and animations
+- [ ] Optimize performance
+- [ ] Add error handling
+- [ ] Create additional pages
