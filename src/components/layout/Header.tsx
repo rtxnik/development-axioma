@@ -17,7 +17,7 @@ export function Header() {
 					<ul className="hidden md:flex items-center space-x-10 text-sm">
 						<li>
 							<Link
-								href="#about"
+								href="/about"
 								className="hover:text-primary transition-colors tracking-wide"
 							>
 								О компании
@@ -25,7 +25,7 @@ export function Header() {
 						</li>
 						<li>
 							<Link
-								href="#library"
+								href="/library"
 								className="hover:text-primary transition-colors tracking-wide"
 							>
 								Инвестиционная библиотека
@@ -33,7 +33,7 @@ export function Header() {
 						</li>
 						<li>
 							<Link
-								href="#news"
+								href="/news"
 								className="hover:text-primary transition-colors tracking-wide"
 							>
 								Новости
@@ -41,7 +41,7 @@ export function Header() {
 						</li>
 						<li>
 							<Link
-								href="#funds"
+								href="/funds"
 								className="hover:text-primary transition-colors tracking-wide"
 							>
 								Фонды
@@ -49,7 +49,7 @@ export function Header() {
 						</li>
 						<li>
 							<Link
-								href="#info"
+								href="/info"
 								className="hover:text-primary transition-colors tracking-wide"
 							>
 								Раскрытие информации
