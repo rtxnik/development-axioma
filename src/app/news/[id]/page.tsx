@@ -3,18 +3,71 @@ import Image from "next/image"
 import Link from "next/link"
 
 interface NewsDetailPageProps {
-	params: { id: string }
+	params: Promise<{ id: string }>
 }
 
-export default function NewsDetailPage({ params }: NewsDetailPageProps) {
-	// В реальном проекте здесь будет загрузка данных по ID
-	const news = {
-		id: params.id,
-		title: "Новый закрытый паевой инвестиционный фонд запущен",
-		content: "Полный текст новости...",
+// Генерируем статические параметры для экспорта
+export async function generateStaticParams() {
+	// Список всех ID новостей, которые нужно сгенерировать статически
+	// В реальном проекте это может быть получено из API или базы данных
+	const newsIds = ["1", "2", "3"]
+
+	return newsIds.map(id => ({
+		id: id,
+	}))
+}
+
+// Тип для данных новости
+interface NewsData {
+	id: string
+	title: string
+	content: string
+	date: string
+	category: string
+	image?: string
+}
+
+export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
+	// Ожидаем получения параметров
+	const { id } = await params
+
+	// Моковые данные новостей
+	const newsData: Record<string, NewsData> = {
+		"1": {
+			id: "1",
+			title: "Новый закрытый паевой инвестиционный фонд запущен",
+			content:
+				"Управляющая компания «Аксиома Капитал» объявляет о запуске нового ЗПИФ, ориентированного на инвестиции в коммерческую недвижимость. Фонд предназначен для квалифицированных инвесторов и предполагает долгосрочные вложения.",
+			date: "2025-01-15",
+			category: "Фонды",
+			image: "https://ext.same-assets.com/2648034400/1276335973.jpeg",
+		},
+		"2": {
+			id: "2",
+			title: "Изменения в регулировании паевых фондов",
+			content:
+				"Банк России внес изменения в требования к управляющим компаниям паевых инвестиционных фондов. Новые правила вступают в силу с 1 февраля 2025 года.",
+			date: "2025-01-10",
+			category: "Регулирование",
+			image: "https://ext.same-assets.com/2648034400/3491124997.png",
+		},
+		"3": {
+			id: "3",
+			title: "Результаты работы за IV квартал 2024 года",
+			content:
+				"Подведены итоги деятельности управляющей компании за последний квартал 2024 года. Показатели превысили плановые значения.",
+			date: "2025-01-05",
+			category: "Компания",
+		},
+	}
+
+	// Получаем данные новости или устанавливаем значения по умолчанию
+	const news = newsData[id] || {
+		id: id,
+		title: "Новость не найдена",
+		content: "Запрашиваемая новость не найдена.",
 		date: "2025-01-15",
-		category: "Фонды",
-		image: "https://ext.same-assets.com/2648034400/1276335973.jpeg",
+		category: "Общие",
 	}
 
 	return (
